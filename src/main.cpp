@@ -194,8 +194,8 @@ public:
     background.loadFromFile("img/bratva.png");
     backgroundRect.left = 0;
     backgroundRect.top = 0;
-    backgroundRect.width = 1080;
-    backgroundRect.height = 800;
+    backgroundRect.width = 1000;
+    backgroundRect.height = 720;
   }
   virtual void checkCollision() {}
   virtual void addItem() {}
@@ -561,17 +561,15 @@ public:
 }; // Дружественный класс
 
 class Crime : public Player,
-              public Enemy { //Перегрузка конструктора при ↓наследовании
+              public Enemy { // Перегрузка конструктора при ↓наследовании
 
 private:
   bool bratva = true;
 
 public:
-  Crime(RenderWindow &win)
-      : Sources(win
-                //, bratva
-                ),
-        Player(win), Enemy(win) {}
+  Crime(RenderWindow &win, bool titre)
+      : Sources(win, bratva), Player(win), Enemy(win) {}
+  Crime(RenderWindow &win) : Sources(win), Player(win), Enemy(win) {}
   void checkCollision() override {
     ::Player::checkCollision();
     ::Platform::checkCollision();
@@ -593,10 +591,11 @@ public:
 };
 
 bool startEngine() {
+  bool titre;
   RenderWindow window(VideoMode(1080, 1920), "Repka bandit");
   window.setFramerateLimit(35);
   srand(time(NULL));
-  Crime game(window);
+  Crime game(window); // Включить титры?
   game.loadSafetyTiles();
 
   while (window.isOpen()) {
