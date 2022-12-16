@@ -78,10 +78,10 @@ protected:
   Sound breakSound;
   SoundBuffer shoot1Buffer, shoot2Buffer;
   Sound shootSound;
-  SoundBuffer monsterBuffer;
-  Sound monsterSound;
-  SoundBuffer monsterDeathBuffer;
-  Sound monsterDeathSound;
+  SoundBuffer PoliceBuffer;
+  Sound PoliceSound;
+  SoundBuffer PoliceDeathBuffer;
+  Sound PoliceDeathSound;
   SoundBuffer blatBuffer;
   Sound blatSound;
 
@@ -178,13 +178,13 @@ public:
     shootSound.setBuffer(shoot1Buffer);
     shootSound.setVolume(8);
 
-    monsterBuffer.loadFromFile("audio/monster.wav");
-    monsterSound.setBuffer(monsterBuffer);
-    monsterSound.setVolume(3);
+    PoliceBuffer.loadFromFile("audio/police.wav");
+    PoliceSound.setBuffer(PoliceBuffer);
+    PoliceSound.setVolume(3);
 
-    monsterDeathBuffer.loadFromFile("audio/monsterdeath.wav");
-    monsterDeathSound.setBuffer(monsterDeathBuffer);
-    monsterDeathSound.setVolume(50);
+    PoliceDeathBuffer.loadFromFile("audio/policedeath.wav");
+    PoliceDeathSound.setBuffer(PoliceDeathBuffer);
+    PoliceDeathSound.setVolume(50);
 
     blatBuffer.loadFromFile("audio/blat.wav");
     blatSound.setBuffer(blatBuffer);
@@ -478,7 +478,7 @@ private:
                                         enemyVelocity,
                                     enemyVector[i]->getPosition().y);
         enemyVelocity *= -1;
-        monsterSound.play();
+        PoliceSound.play();
         clockForEnemy2.restart();
       }
     }
@@ -490,7 +490,7 @@ private:
                 enemyVector[i]->getGlobalBounds())) {
           delete enemyVector[i];
           enemyVector.erase(enemyVector.begin() + i);
-          monsterDeathSound.play();
+          PoliceDeathSound.play();
           break;
         }
       }
@@ -512,7 +512,7 @@ private:
         yAccelerationUp = 15;
         isFalling = false;
         isJumping = true;
-        monsterDeathSound.play();
+        PoliceDeathSound.play();
         break;
       }
       if (player.getGlobalBounds().intersects(
