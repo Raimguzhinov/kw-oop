@@ -8,4 +8,4 @@ make run
 ```
 ##
 
-<img src="https://github.com/Raimguzhinov/kw-oop/blob/main/img/screenshot.png?raw=true" style=" width:600px ; height:800px "></a>
+<img src="https://github.com/Raimguzhinov/kw-oop/blob/main/img/screenshot.png?raw=true" style=" width:600px ; height:850px "></a>
