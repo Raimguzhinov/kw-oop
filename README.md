@@ -1,4 +1,4 @@
-# kw-arcanoid
+# kw-oop
 
 ## Для запуска на *nix
 
@@ -8,4 +8,4 @@ make run
 ```
 ##
 
-<img src="https://github.com/Raimguzhinov/kw-arcanoid/blob/main/img/op.png?raw=true" style=" width:800px ; height:600px "></a>
+<img src="https://github.com/Raimguzhinov/kw-oop/blob/main/img/screenshot.png?raw=true" style=" width:600px ; height:800px "></a>
